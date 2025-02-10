@@ -70,7 +70,7 @@ app.post('/', async (req, res) => {
 
   // 1. 텍스트를 받아옴
   const { text } = req.body;
-
+  console.log('text :', text);
   // 2-1. 이미지를 생성하는 프롬프트
   // llama-3-3-70b-free (together) -> 속도 측면
   const prompt = await callAI({
@@ -136,7 +136,6 @@ app.post('/', async (req, res) => {
     desc,
   });
 });
-
 app.listen(port, () => {
   console.log(`app listening on port ${port}`);
 });
